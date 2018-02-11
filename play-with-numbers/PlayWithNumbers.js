@@ -11,9 +11,21 @@ var PlayWithNumbers = function(number, power){
     this.number = number;
     this.power = power;
 }
-//Prototype built from the constructor
-PlayWithNumbers.prototype.digPow = function (no, pow) {
-    return 1
+//Prototype built from the constructor which has the functionality of the method
+PlayWithNumbers.prototype.digPow = function (no, po) {
+    var sum = 0;
+    var arrString = no.toString().split(""); 
+    for (var i=0; i<arrString.length; i++){
+        sum += Math.pow(arrString[i], po);
+        po++;
+    }
+    
+    
+    console.log(sum);
+    if (sum % no === 0) {
+        return sum/no;
+    }
+    return -1
 }
 
 module.exports = PlayWithNumbers;
